@@ -1,0 +1,54 @@
+.navigation {
+    display: flex;
+    position: absolute;
+    top : 100%; /*permet de mettre la navigation directement en dessous du header*/
+    right : 0;
+   background-color: black;
+   gap: 5px; /*va avoir un ESPACE de 5px ENTRE les element du menu*/
+   padding: 10px; /*ESPACE AUTOUR du conteur navigation*/
+   flex-direction: column;
+   /*
+   top: 
+   bottom:
+   position:
+   */
+
+   transform : translateY(-200%); /*LE MOUVEMENT/animer MENU QUI SORT ET QUI ENTRE . on le cache avec le -200% sinon il sera a sa place normale qui est en haut (top 100%) */
+   transition : transform .25s; /*COMBIEN DE TEMPS SA PREND POUR TRANSITER*/
+   
+}
+#burger {
+    margin-left: auto; /* utilise l'espace restant à gauche de la navigation*/
+}
+.navigation a {
+    color : #fff;
+}
+#chk_burger {
+    display : none; 
+}
+
+/*Opérateur de selection 
+Espace « » main div (permet de sélectionner tous les divs inclus dans main)
+Plus grand  « > » main > div (permet de selectionner tous les div qui ont comme parent direct main)
+Plus « + » main + p (permet de selectionner le premier «p» situé après la balise main)
+vague « ~ » main ~ p (permet de selectionner tous les «p» situé après main)
+*/
+
+
+#chk_burger:checked  ~ .navigation {
+    transform : translateY(0); 
+/*
+Si la case à cocher #chk_burger est coché( : checked) alors on sélectionne le conteneur .navigation
+la regle de style formulaire .navigation
+*/
+}
+
+/*
+Référence des fonctions CSS 
+https://css-tricks.com/complete-guide-to-css-functions/
+
+Référence des selectors
+https://www.w3schools.com/cssref/css_selectors.php
+*/
+
+
